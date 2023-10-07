@@ -1,6 +1,5 @@
-SELECT *
+SELECT roles[0] -> 'role'
 FROM actors
-WHERE roles ->> 'role' = 'actor'
-  AND kind = 'toast3'
-ORDER BY random_order
+WHERE kind = 'toast3'
+  AND random_order > (RANDOM() * 10000000)::bigint
 LIMIT 1;
